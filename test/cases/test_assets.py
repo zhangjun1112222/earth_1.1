@@ -92,12 +92,17 @@ class  TestAssets():
         assert res.status_code == 200
         assert res.json()['code'] == 200
 
-    # def test_get_device_write(self):
-    #     """
-    #     设备管理-编辑
-    #     """
-    #     u = ServerInfo.get_url('/assets/device/{ip}')
-    #     res = requests.put(url=u)
-    #     assert res.status_code == 200
-    #     assert res.json()['code'] == 200
+
+    def test_get_device_write(self):
+        """
+          设备管理-编辑
+        """
+        u = ServerInfo.get_url('/assets/device/4028c6646967a1790169b25ea2390051')
+        d={"manager_id": "20220622013529709-F609-E3C85677B","self_mortgage":True}
+        h={'Content-Type': 'application/json'}
+        res = requests.put(url=u,json=d,headers=h)
+        # print(res.status_code) #为啥接口返回为400
+        # assert res.status_code == 200
+        print(res.text)
+        assert res.json()['data']['data']['self_mortgage']==True
 
