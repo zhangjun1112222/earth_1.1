@@ -120,7 +120,8 @@ class TestDataCenter():
         商用飞机管理-分页获取
         """
         u=ServerInfo.get_url('/data/aircraft/commercial/page/1/size/30')
-        res = requests.get(url=u)
+        p={'key':1}
+        res = requests.get(url=u,params=p)
         A=(res.json()['data']['total'])
         if A<30:
             a=A

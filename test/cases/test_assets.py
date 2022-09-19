@@ -5,6 +5,7 @@ from config.config import ServerInfo
 with open (r'C:\Users\admin\Desktop\xiangmu\data\test_assets.yaml','r',encoding='utf-8') as f:
     data=yaml.safe_load(f)
 
+
 class  TestAssets():
     def setup(self):
         pass
@@ -20,6 +21,7 @@ class  TestAssets():
         res=requests.get(url=u)
         assert res.status_code==expect1
         assert res.json()['code']==expect2
+        print(data['设备管理详情-获取'])
 
 
     # @pytest.mark.parametrize("id,expect1,expect2", [('96cd96c50b12c10de05013ac0c881b04new', 200, 200),
@@ -43,6 +45,7 @@ class  TestAssets():
         res = requests.get(url=u)
         assert res.status_code == expect1
         assert res.json()['code'] == expect2
+
 
     @pytest.mark.parametrize("id,expect1,expect2", data['设备管理详情-价值信息'])
     def test_get_device_details_vaule(self, id, expect1, expect2):
@@ -70,8 +73,13 @@ class  TestAssets():
         """
         u = ServerInfo.get_url('/assets/device/page/1/size/20')
         res = requests.get(url=u)
+        A=res.json()['data']['total']
+        if A<20:
+            a=A
+        else:
+            a=20
         assert res.status_code == 200
-        assert (len(res.json()['data']['list']))==20
+        assert (len(res.json()['data']['list']))==a
 
     def test_get_device_typelist(self):
         """
