@@ -6,6 +6,7 @@ with open (r'C:\Users\zj_001\Desktop\WXM\data\test_assets.yaml','r',encoding='ut
     data=yaml.safe_load(f)
 
 
+
 class  TestAssets():
     def setup(self):
         pass
