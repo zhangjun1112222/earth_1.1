@@ -34,7 +34,7 @@ class ExcelTools():
         return results
 
 if __name__ == "__main__":
-    a = ExcelTools.read_excel(r'C:\Users\admin\Desktop\xiangmu\data\新建 XLSX 工作表.xlsx', '第一页',skip_first=True)
+    a = ExcelTools.read_excel(r'C:\Users\zj_001\Desktop\新建 XLS 工作表.xls', 'Sheet1',skip_first=True)
     print(a)
 
     # [

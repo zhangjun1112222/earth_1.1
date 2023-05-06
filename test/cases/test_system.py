@@ -177,7 +177,7 @@ class TestSystem():
         res=requests.get(url=u)
         assert res.status_code==200
         assert res.json()['code']==200
-        print(res.json()['data'][0]['id'])
+        # print(res.json()['data'][0]['id'])
         return res.json()['data'][0]['id']
 
     def test_dictitemdetail(self):
@@ -198,7 +198,7 @@ class TestSystem():
         '''
         A=self.test_dictpagesize1()
         u = ServerInfo.get_url('/sys/dict/' + A + '/item')
-        d = {"description": "节点描述","name": "节点名字","order": 1,"value": "节点值"}
+        d = {"description": "节点描述","name": "节点名字","order": 1000,"value": "节点值"}
         res=requests.post(url=u,json=d)
         assert res.status_code == 200
         assert res.json()['code'] == 200
@@ -212,7 +212,7 @@ class TestSystem():
         '''
         A=self.test_dictitemlist()
         u=ServerInfo.get_url('/sys/dict/item/'+A)
-        d={"description": "节点的描述111","name": "节点名字111","order": 0,"value": "节点值111"}
+        d={"description": "节点的描述111","name": "节点名字111","order": 111111,"value": "节点值111"}
         res=requests.put(url=u,json=d)
         assert res.status_code == 200
         assert res.json()['code'] == 200

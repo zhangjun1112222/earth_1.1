@@ -47,6 +47,8 @@ class  TestAssets():
         assert res.json()['code'] == expect2
 
 
+
+
     @pytest.mark.parametrize("id,expect1,expect2", data['设备管理详情-价值信息'])
     def test_get_device_details_vaule(self, id, expect1, expect2):
         """
