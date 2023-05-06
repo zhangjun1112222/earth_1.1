@@ -1,0 +1,29 @@
+价值规则添加:
+    - - day_by: 1
+        id: string
+        month: 10
+        name: test_test
+        period_list:
+        - end_at: 5
+          growth_rate: 10
+          start_at: 1
+        salvage_rate: 0
+        trigger_by: 0
+        type: 1
+        value_from: '1'
+      - 200
+      - 200
+    - - day_by: 1
+        id: string
+        month: 10
+        name: test_test
+        period_list:
+        - end_at: 5
+          growth_rate: 10
+          start_at: 1
+        salvage_rate: 0
+        trigger_by: 0
+        type: 1
+        value_from: '1'
+      - 200
+      - 500
